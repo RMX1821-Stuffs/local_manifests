@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!-- Remote definitions -->
+	<remote name="ghub" fetch="https://github.com" />
+	<remote name="glab" fetch="https://gitlab.com" />
+
+	<!-- Device Trees -->
+	<project path="device/realme/RMX1821" name="RMX1821-Stuffs/android_device_realme_RMX1821" remote="ghub" revision="main" />
+	<project path="kernel/realme/RMX1821" name="RMX1821-Stuffs/android_kernel_realme_RMX1821" remote="ghub" revision="PixelOS" clone-depth="1" />
+	<project path="vendor/realme/RMX1821" name="realme3-devs/android_vendor_realme_rmx1821" remote="ghub" revision="13" />
+	<project path="vendor/realme/RMX1821-ims" name="realme3-devs/android_vendor_realme_rmx1821-ims" remote="ghub" revision="PixelOS" />
+	<project path="device/mediatek/sepolicy_vndr" name="realme3-devs/android_device_mediatek_sepolicy_vndr" remote="ghub" revision="13" />
+	<project path="prebuilts/clang/host/linux-x86/clang-r437112" name="crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r437112" remote="glab" revision="12.0" clone-depth="1"/>
+
+	
+	<!-- Remove unpatched projects -->
+        <remove-project path="build/make" name="build" groups="pdk" remote="derp" />
+	<remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
+	<remove-project path="external/selinux" name="platform/external/selinux" groups="pdk" />
+	<remove-project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+
+	<!--Fetch projects -->
+	<project path="build/make" name="RMX1821-Stuffs/build" remote="ghub" revision="13" >
+	<linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+        <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+        <linkfile src="core" dest="build/core" />
+        <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+        <linkfile src="target" dest="build/target" />
+        <linkfile src="tools" dest="build/tools" />
+	</project>
+
+	<project path="frameworks/opt/net/ims" name="RMX1821-Stuffs/frameworks_net_opt_ims" remote="ghub" revision="13" />
+	<project path="external/selinux" name="RMX1821-Stuffs/external_selinux" remote="ghub" revision="13" />
+	<project path="packages/modules/Wifi" name="RMX1821-Stuffs/packages_modules_Wifi" remote="ghub" revision="13" />
+
+
+</manifest>
