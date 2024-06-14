@@ -6,7 +6,7 @@
 	<remote name="glab" fetch="https://gitlab.com" />
 
 	<!-- Device Trees -->
-	<project path="device/realme/RMX1821" name="RMX1821-Stuffs/android_device_realme_RMX1821" remote="ghub" revision="main" />
+	<project path="device/realme/RMX1821" name="RMX1821-Stuffs/android_device_realme_RMX1821" remote="ghub" revision="lineage-20.0" />
 	<project path="kernel/realme/RMX1821" name="RMX1821-Stuffs/android_kernel_realme_RMX1821" remote="ghub" revision="PixelOS" clone-depth="1" />
 	<project path="vendor/realme/RMX1821" name="realme3-devs/android_vendor_realme_rmx1821" remote="ghub" revision="13" />
 	<project path="vendor/realme/RMX1821-ims" name="realme3-devs/android_vendor_realme_rmx1821-ims" remote="ghub" revision="PixelOS" />
@@ -15,13 +15,14 @@
 
 	
 	<!-- Remove unpatched projects -->
-        <remove-project path="build/make" name="build" groups="pdk" remote="derp" />
-	<remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
-	<remove-project path="external/selinux" name="platform/external/selinux" groups="pdk" />
-	<remove-project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+
+	<remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
+	<remove-project path="build/make" name="LineageOS/android_build" groups="pdk" >
+	<remove-project path="external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" />
+	<remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
 
 	<!--Fetch projects -->
-	<project path="build/make" name="RMX1821-Stuffs/build" remote="ghub" revision="13" >
+	<project path="build/make" name="RMX1821-Stuffs/android_build" remote="ghub" revision="lineage-20.0" >
 	<linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
         <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
         <linkfile src="core" dest="build/core" />
@@ -30,9 +31,9 @@
         <linkfile src="tools" dest="build/tools" />
 	</project>
 
-	<project path="frameworks/opt/net/ims" name="RMX1821-Stuffs/frameworks_net_opt_ims" remote="ghub" revision="13" />
-	<project path="external/selinux" name="RMX1821-Stuffs/external_selinux" remote="ghub" revision="13" />
-	<project path="packages/modules/Wifi" name="RMX1821-Stuffs/packages_modules_Wifi" remote="ghub" revision="13" />
+	<project path="frameworks/opt/net/ims" name="RMX1821-Stuffs/android_frameworks_net_opt_ims" remote="ghub" revision="lineage-20.0" />
+	<project path="external/selinux" name="RMX1821-Stuffs/android_external_selinux" remote="ghub" revision="lineage-20.0" />
+	<project path="packages/modules/Wifi" name="RMX1821-Stuffs/android_packages_modules_Wifi" remote="ghub" revision="lineage-20.0" />
 
 
 </manifest>
