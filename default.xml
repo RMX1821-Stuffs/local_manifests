@@ -15,7 +15,6 @@
 
 	
 	<!-- Remove unpatched projects -->
-	<remove-project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
 	<remove-project path="build/make" name="LineageOS/android_build" groups="pdk" />
 	<remove-project path="external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" />
 	<remove-project path="packages/modules/Wifi" name="LineageOS/android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" />
@@ -30,7 +29,6 @@
         <linkfile src="tools" dest="build/tools" />
 	</project>
 
-	<project path="frameworks/opt/net/ims" name="RMX1821-Stuffs/android_frameworks_net_opt_ims" remote="ghub" revision="lineage-20.0" />
 	<project path="external/selinux" name="RMX1821-Stuffs/android_external_selinux" remote="ghub" revision="lineage-20.0" />
 	<project path="packages/modules/Wifi" name="RMX1821-Stuffs/android_packages_modules_Wifi" remote="ghub" revision="lineage-20.0" />
 
